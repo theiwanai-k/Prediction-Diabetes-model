@@ -1,6 +1,10 @@
 import streamlit as st
 import numpy as np
 import joblib
+import pkg_resources
+
+st.title("debugging packages")
+st.write([d.project_name for d in pkg_resources.working_set])
 
 # Load trained model
 #with open("model1.pkl", "rb") as f:
