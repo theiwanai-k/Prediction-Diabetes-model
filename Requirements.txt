@@ -8,4 +8,4 @@ seaborn
 scipy
 statsmodels
 imblearn
-pickle
+joblib

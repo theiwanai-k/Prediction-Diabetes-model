@@ -1,10 +1,12 @@
 import streamlit as st
-import pickle
 import numpy as np
+import joblib
 
 # Load trained model
-with open("model1.pkl", "rb") as f:
-    model1 = pickle.load(f)
+#with open("model1.pkl", "rb") as f:
+#    model1 = pickle.load(f)
+
+model = joblib.load("model2.pkl") 
 
 st.title("Diabetes Prediction System 🩺")
 
@@ -45,7 +47,7 @@ features = np.array([[pregnancies, glucose, bp, bmi, dpf, age, race]])
 
 # Prediction
 if st.button("Predict"):
-    prediction = model1.predict(features)[0]
+    prediction = model.predict(features)[0]
 
     if prediction == 0:
         st.success("No diabetic symptoms ✅")
